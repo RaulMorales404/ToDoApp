@@ -3,21 +3,14 @@ import ListTodos from '../components/ListTodos'
 import { View } from 'react-native';
 import Header from '../components/Header';
 import Title from '../components/Title';
-import { jsData } from '../../data/todoArray';
-import { List } from '../../interfaces/dataList';
+import { useHome } from '../../hooks/useHome';
 
-function Home() {
 
-    const [localData, setLocalData] = useState(
-        jsData.sort((a: any, b: any) => a.isCompleted - b.isCompleted)
-    )
-    const [showComplited, setShowComplited] = useState(false)
-    const changeShowComplit = () => {
-        setShowComplited(!showComplited);
-    }
-    const validateShowTastComplit = (item: List) => {
-        return showComplited ? !item.isToday && item.isCompleted : !item.isToday;
-    }
+const Home = () => {
+    const { localData,
+        changeShowComplit,
+        jsData,
+        validateShowTastComplit } = useHome();
 
     return (
         <View style={{

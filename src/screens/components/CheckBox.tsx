@@ -1,13 +1,15 @@
 import React from 'react'
 import { TouchableOpacity, View, StyleSheet, Text } from 'react-native'
 import { List } from '../../interfaces/dataList'
-
+import Icon from 'react-native-vector-icons/Ionicons';
 interface Props {
     item: List,
 }
 
 const CheckBox = ({ item: { isCompleted, isToday } }: Props) => {
     if (isToday) return <View style={{ ...styles.check, ...styles.checkTomorrow }} />
+
+
 
     return (
         <TouchableOpacity style={{
@@ -18,8 +20,15 @@ const CheckBox = ({ item: { isCompleted, isToday } }: Props) => {
         >
 
             <Text style={{ ...styles.text }}>{
-                isCompleted ? '1' : '0'
+                isCompleted ?
+                    <Icon name="checkmark-sharp"
+                        style={{ fontWeight: '900' }}
+                        size={14}
+                        color="#fcfcfc" />
+                    : '0'
+
             }</Text>
+
 
         </TouchableOpacity >
     )
@@ -45,7 +54,8 @@ const styles = StyleSheet.create({
         elevation: 5,
     },
     text: {
-        color: '#ffffff'
+        color: '#ffffff',
+
     },
     checkTomorrow: {
         backgroundColor: '#000',

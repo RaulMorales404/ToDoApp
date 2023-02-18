@@ -4,10 +4,10 @@ import { FlatList, SafeAreaView, Text, View } from 'react-native';
 import CartList from './CartList';
 import { List } from '../../interfaces/dataList';
 interface Props {
-    data: List[]
+    data: List[],
 }
 const ListTodos = ({ data }: Props) => {
-   
+
     return (
         <SafeAreaView style={{ flex: 1, }}>
             <View style={{ flex: 1 }}>
