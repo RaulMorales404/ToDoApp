@@ -9,6 +9,7 @@ import { useHome } from '../../hooks/useHome';
 const Home = () => {
     const { localData,
         changeShowComplit,
+        showComplited,
         jsData,
         validateShowTastComplit } = useHome();
 
@@ -19,7 +20,7 @@ const Home = () => {
             paddingHorizontal: 15
         }}>
             <Header />
-            <Title title='Today' showSeconTitle={true} action={changeShowComplit} />
+            <Title title='Today' message={showComplited} showSeconTitle={true} action={changeShowComplit} />
             <ListTodos data={localData.filter((item) => validateShowTastComplit(item))} />
             <Title title='Tomorrow' />
             <ListTodos data={jsData.filter((item) => item.isToday)} />

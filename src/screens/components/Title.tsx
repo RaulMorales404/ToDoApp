@@ -5,8 +5,11 @@ interface Props {
     title: string,
     showSeconTitle?: boolean,
     action?: () => void,
+    message?: boolean,
 }
-const Title = ({ title, showSeconTitle = false, action }: Props) => {
+const Title = ({ title, message, showSeconTitle = false, action }: Props) => {
+
+
     return (
         <View style={{
             marginBottom: 30,
@@ -25,7 +28,7 @@ const Title = ({ title, showSeconTitle = false, action }: Props) => {
                     onPress={action}
                 >
                     <Text style={{ fontSize: 17, color: '#4c8ef7' }}>
-                        Hiden Completed
+                        {message ? 'Hide Completed' : 'Show Completed'}
                     </Text>
                 </TouchableOpacity>}
 

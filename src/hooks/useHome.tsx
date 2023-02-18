@@ -9,12 +9,13 @@ export const useHome = () => {
     )
     const [showComplited, setShowComplited] = useState(false)
     const changeShowComplit = () => {
-        setShowComplited(!showComplited);
+        return setShowComplited(!showComplited);
     }
     const validateShowTastComplit = (item: List) => {
         return showComplited ? !item.isToday && item.isCompleted : !item.isToday;
     }
     return {
+        showComplited,
         localData,
         changeShowComplit,
         validateShowTastComplit,
