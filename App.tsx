@@ -1,11 +1,10 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import ListTodos from './src/screens/components/ListTodos';
+import Home from './src/screens/home/Home';
 const App = () => {
   return (
     <View style={{ flex: 1, }}>
-      
-      <ListTodos />
+      <Home />
     </View>
   );
 };
