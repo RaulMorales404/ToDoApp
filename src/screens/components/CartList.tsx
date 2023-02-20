@@ -14,14 +14,14 @@ const CartList = ({ itemList, itemList: { text, hours, isCompleted } }: Props) =
                 <Text style={{
                     ...styles.text,
                     textDecorationLine: isCompleted ? 'line-through' : 'none',
-                    color: isCompleted ? '#73737330' : '737373'
+                    color: isCompleted ? '#73737330' : '#737373'
                 }}>
                     {text}
                 </Text>
                 <Text style={{
                     ...styles.time,
                     textDecorationLine: isCompleted ? 'line-through' : 'none',
-                    color: isCompleted ? '#73737330' : '737373'
+                    color: isCompleted ? '#73737330' : '#737373'
                 }}>{hours}</Text>
             </View>
 

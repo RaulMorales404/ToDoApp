@@ -22,7 +22,7 @@ const ListTodos = ({ data }: Props) => {
                 }}>
                     <Text style={{
                         fontSize: 30,
-                        color: '#4c4c4c34'
+                        color: '#737373'
                     }}>
                         No tasks to be done
                     </Text>
